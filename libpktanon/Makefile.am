@@ -27,9 +27,9 @@ anonprim_sources +=  anonprimitives/AnonBroadcastHandler.cpp
 anonprim_sources +=  anonprimitives/AnonKnownEthertypeHandler.cpp 
 anonprim_sources +=  anonprimitives/AnonKnownProtocolHandler.cpp 
 
-anonprim_sources +=  anonprimitives/cryptopan/rijndael.cpp 
-anonprim_sources +=  anonprimitives/cryptopan/panonymizer.cpp 
-anonprim_sources +=  anonprimitives/AnonCryptoPan.cpp 
+#anonprim_sources +=  anonprimitives/cryptopan/rijndael.cpp
+#anonprim_sources +=  anonprimitives/cryptopan/panonymizer.cpp
+#anonprim_sources +=  anonprimitives/AnonCryptoPan.cpp
 
 if USE_NETTLE
 anonprim_sources +=  anonprimitives/AnonHashSha1_Nettle.cpp 
