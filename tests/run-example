@@ -1,0 +1,19 @@
+#!/bin/sh
+# autopkgtest: Basic functionality test for Stenographer
+# Author: Sascha Steinbiss <satta@debian.org>
+set -e
+
+ORIGDIR=$(pwd)
+DATADIR=$ORIGDIR/debian/tests/
+WORKDIR=$(mktemp -d)
+
+trap "rm -rf $WORKDIR" 0 INT QUIT ABRT PIPE TERM
+cd $WORKDIR
+
+pktanon -c /usr/share/doc/pktanon/examples/profiles/profile.xml $ORIGDIR/profiles/sample.pcap ./out.pcap
+[ -s out.pcap ]
+
+pktanon -c /usr/share/doc/pktanon/examples/profiles/profile-identity.xml $ORIGDIR/profiles/sample.pcap ./out.pcap
+[ -s out.pcap ]
+
+#diff out.pcap $DATADIR/sample.identity.pcap
