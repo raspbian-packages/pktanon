@@ -1,0 +1,25 @@
+From: Sascha Steinbiss <satta@debian.org>
+Date: Tue, 9 May 2017 10:56:33 +0200
+Subject: remove CryptoPan
+
+---
+ libpktanon/Makefile.am | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/libpktanon/Makefile.am b/libpktanon/Makefile.am
+index 9eca11a..3cd82c1 100644
+--- a/libpktanon/Makefile.am
++++ b/libpktanon/Makefile.am
+@@ -27,9 +27,9 @@ anonprim_sources +=  anonprimitives/AnonBroadcastHandler.cpp
+ anonprim_sources +=  anonprimitives/AnonKnownEthertypeHandler.cpp 
+ anonprim_sources +=  anonprimitives/AnonKnownProtocolHandler.cpp 
+ 
+-anonprim_sources +=  anonprimitives/cryptopan/rijndael.cpp 
+-anonprim_sources +=  anonprimitives/cryptopan/panonymizer.cpp 
+-anonprim_sources +=  anonprimitives/AnonCryptoPan.cpp 
++#anonprim_sources +=  anonprimitives/cryptopan/rijndael.cpp
++#anonprim_sources +=  anonprimitives/cryptopan/panonymizer.cpp
++#anonprim_sources +=  anonprimitives/AnonCryptoPan.cpp
+ 
+ if USE_NETTLE
+ anonprim_sources +=  anonprimitives/AnonHashSha1_Nettle.cpp 

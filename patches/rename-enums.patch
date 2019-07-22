@@ -1,0 +1,40 @@
+Description: rename enum
+ Apparently something else now #defines (or in some other way influences
+ the value of) SOCKET so using that as an enum identifier leads to this
+ problem. 
+Author: Sascha Steinbiss <satta@debian.org>
+Forwarded: https://github.com/KIT-Telematics/pktanon/pull/1
+Last-Update: 2019-07-22
+--- a/src/RuntimeConfig.cpp
++++ b/src/RuntimeConfig.cpp
+@@ -47,7 +47,7 @@
+ 
+ void RuntimeConfig::addOutputSockConfig ( std::string sock_addr, uint16_t sock_port, bool use_ipv6, bool use_udp )
+ {
+-  output_type = OutputType::SOCKET;
++  output_type = OutputType::OSOCKET;
+   output_config = new OutputSocketConfig ( sock_addr, sock_port, use_ipv6, use_udp );
+ }
+ 
+--- a/src/RuntimeConfig.h
++++ b/src/RuntimeConfig.h
+@@ -19,7 +19,7 @@
+ };
+ enum class OutputType
+ {
+-  UNDEFINED, OSTREAM, LIBPCAP_DUMP, SOCKET, LIBPCAP_INJECT //, RAW_SOCKETS
++  UNDEFINED, OSTREAM, LIBPCAP_DUMP, OSOCKET, LIBPCAP_INJECT //, RAW_SOCKETS
+ };
+ 
+ struct default_values
+--- a/src/RuntimeFactory.cpp
++++ b/src/RuntimeFactory.cpp
+@@ -46,7 +46,7 @@
+     case OutputType::OSTREAM:
+       return new OstreamOutput();
+       
+-    case OutputType::SOCKET:
++    case OutputType::OSOCKET:
+       return new SocketOutput();
+       
+     default:
