@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+UPSTREAM_VERSION=$(shell dpkg-parsechangelog -SVersion | cut -f1 -d-)
+TIMESTAMP=$(shell dpkg-parsechangelog -STimestamp)
+DATE=$(shell date --date=@$(TIMESTAMP) '+%d %B %Y')
+
+MANPAGES=debian/man/pktanon.1
+
+%.1: %.1.txt
+	TZ=UTC LC_ALL=C \
+	  txt2man -d "$(DATE)" \
+	  -s 1 -r "pktanon $(UPSTREAM_VERSION)" \
+	  -t $(shell basename -a -s.1 $@) \
+	  $< > $@
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf $(MANPAGES)
+	rm -f tests/pktanon-runtime/trace.pcap.gz tests/transformations/out.pcap tests/dejagnu_logs/*.sum tests/dejagnu_logs/*.log
+
+override_dh_installman: $(MANPAGES)
+	dh_installman
+
+override_dh_auto_install:
+	dh_auto_install
+	rm -rfv debian/pktanon/usr/lib
+
+override_dh_auto_test:
+	echo testsuite disabled.
+
