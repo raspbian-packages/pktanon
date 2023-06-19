@@ -1,0 +1,12 @@
+Source notes for pktanon
+------------------------
+
+All source files that have been included upstream from the CryptoPAN project
+have been removed via Files-Excluded: in d/copyright for DFSG compliance
+reasons. There is no explicit permission to redistribute and modify these
+files. After contacting upstream, they advised to disable the associated
+functionality in pktanon (see patch), allowing to just drop these files from
+the Debian source package without too much impact on the overall performance
+of pktanon.
+
+ -- Sascha Steinbiss <satta@debian.org>, Tue, 09 May 2017 13:40:14 +0200

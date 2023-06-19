@@ -1,0 +1,19 @@
+From: Sascha Steinbiss <satta@debian.org>
+Date: Tue, 7 Nov 2017 09:36:34 +0100
+Subject: add support for xerces-c 3.2
+
+---
+ libpktanon/ConfigSAXParser.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- a/libpktanon/ConfigSAXParser.cpp
++++ b/libpktanon/ConfigSAXParser.cpp
+@@ -68,7 +68,7 @@
+ const size_t e_anon = 184;
+ 
+ 
+-void ConfigParserHandler::startElement ( const XMLCh* const uri, const XMLCh* const localname, const XMLCh* const qname, const xercesc_3_1::Attributes& attrs )
++void ConfigParserHandler::startElement ( const XMLCh* const uri, const XMLCh* const localname, const XMLCh* const qname, const xercesc::Attributes& attrs )
+ {
+   XMLString::lowerCase ( const_cast<XMLCh*> ( localname ) );
+   size_t element =  XMLString::hash ( localname,  element_hash_base );
