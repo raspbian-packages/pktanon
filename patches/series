@@ -1,0 +1,6 @@
+rename-enums.patch
+0001-remove-CryptoPan.patch
+0002-add-support-for-xerces-c-3.2.patch
+0004-include-pcap.h-outside-namespace.patch
+0005-include-stdexcept.patch
+0006-include-cstdint.patch

@@ -1,0 +1,28 @@
+Source: pktanon
+Section: net
+Priority: optional
+Maintainer: Sascha Steinbiss <satta@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               libxerces-c-dev,
+               libboost-dev,
+               libboost-system-dev,
+               libpcap-dev,
+               nettle-dev,
+               pkg-config,
+               txt2man
+Standards-Version: 4.6.1
+Rules-Requires-Root: no
+Homepage: https://github.com/KIT-Telematics/pktanon
+Vcs-Git: https://salsa.debian.org/debian/pktanon.git
+Vcs-Browser: https://salsa.debian.org/debian/pktanon
+
+Package: pktanon
+Architecture: amd64 arm64 i386 mips64el mipsel ppc64el alpha hppa ia64 m68k powerpc ppc64 riscv64 sh4 sparc64 x32
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: profile-based traffic anonymizer
+ PKtAnon performs network trace anonymization, e.g. on pcap files.
+ It is highly configurable by using anonymization profiles. Anonymization
+ profiles allow for mapping of arbitrary anonymization primitives to
+ protocol attributes, thus providing high flexibility and easy usability.
+ A huge number of anonymization primitives and network protocols are supported
+ and ready to use for online and offline anonymization.
