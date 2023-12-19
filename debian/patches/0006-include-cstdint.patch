@@ -1,0 +1,55 @@
+Description: add cstdint include
+ This fixes building with GCC 13.
+Author: Sascha Steinbiss <satta@debian.org>
+Forwarded: https://github.com/KIT-Telematics/pktanon/pull/9
+Last-Update: 2023-06-19
+--- a/libpktanon/anonprimitives/AnonBroadcastHandler.cpp
++++ b/libpktanon/anonprimitives/AnonBroadcastHandler.cpp
+@@ -9,6 +9,7 @@
+ #include "AnonFactory.h"
+ #include <algorithm>
+ #include <string.h>
++#include <cstdint>
+ 
+ namespace pktanon
+ {
+--- a/libpktanon/anonprimitives/AnonConstOverwriteRange.h
++++ b/libpktanon/anonprimitives/AnonConstOverwriteRange.h
+@@ -9,6 +9,7 @@
+ #define PKTANON__ANONCONSTOVERWRITERANGE_H
+ 
+ #include "AnonPrimitive.h"
++#include <cstdint>
+ 
+ namespace pktanon
+ {
+--- a/libpktanon/anonprimitives/AnonHashHmacSha1.h
++++ b/libpktanon/anonprimitives/AnonHashHmacSha1.h
+@@ -9,6 +9,7 @@
+ #define PKTANON__ANON_HASH_HMAC_SHA1_H
+ 
+ #include "AnonPrimitive.h"
++#include <cstdint>
+ 
+ namespace pktanon
+ {
+--- a/libpktanon/transformations/TransformationsConfigurator.h
++++ b/libpktanon/transformations/TransformationsConfigurator.h
+@@ -11,6 +11,7 @@
+ # include <string>
+ # include <functional>
+ # include <unordered_map>
++# include <cstdint>
+ 
+ # include <PktAnonConfig.h>
+ 
+--- a/src/RuntimeConfig.h
++++ b/src/RuntimeConfig.h
+@@ -9,6 +9,7 @@
+ #define PKTANON_RUNTIMECONFIG_H
+ 
+ #include <string>
++#include <cstdint>
+ 
+ namespace pktanon
+ {

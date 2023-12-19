@@ -1,0 +1,108 @@
+pktanon (2~git20160407.0.2bde4f2+dfsg-12) unstable; urgency=medium
+
+  * Add support for loong64 architecture. Thanks to Zhang Na for the reminder.
+    Closes: #1058919
+  * Bump Standards-Version.
+  * Bump debian directory copyright date.
+
+ -- Sascha Steinbiss <satta@debian.org>  Tue, 19 Dec 2023 13:47:36 +0100
+
+pktanon (2~git20160407.0.2bde4f2+dfsg-11) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Submit.
+
+  [ Sascha Steinbiss ]
+  * Fix building with GCC 13.
+    Addresses: #1037821
+
+ -- Sascha Steinbiss <satta@debian.org>  Mon, 19 Jun 2023 10:03:56 +0200
+
+pktanon (2~git20160407.0.2bde4f2+dfsg-10) unstable; urgency=medium
+
+  * Remove s390x from supported architectures.
+    This addresses a bug regarding failing tests on s390x.
+    See #1012382.
+  * Bump Standards-Version.
+  * Add upstream metadata.
+
+ -- Sascha Steinbiss <satta@debian.org>  Sun, 04 Dec 2022 18:16:23 +0100
+
+pktanon (2~git20160407.0.2bde4f2+dfsg-9) unstable; urgency=medium
+
+  * Remove armel and armhf from supported architectures.
+    This addresses a bug regarding unaligned accesses that causes tests to
+    fail on these architectures, blocking testing migration.
+    See #1003104 and #999620.
+
+ -- Sascha Steinbiss <satta@debian.org>  Sun, 08 May 2022 11:52:01 +0200
+
+pktanon (2~git20160407.0.2bde4f2+dfsg-8) unstable; urgency=medium
+
+  * Remove unused watchfile.
+  * Use debhelper 13.
+  * Bump Standards-Version.
+  * Set Rules-Requires-Root.
+
+ -- Sascha Steinbiss <satta@debian.org>  Thu, 04 Nov 2021 10:35:31 +0100
+
+pktanon (2~git20160407.0.2bde4f2+dfsg-7) unstable; urgency=medium
+
+  * Add patch to fix build with GCC 10.
+    Prompted by #957688.
+  * Bump Standards-Version.
+  * Use debhelper-compat 12.
+
+ -- Sascha Steinbiss <satta@debian.org>  Wed, 22 Apr 2020 22:50:47 +0200
+
+pktanon (2~git20160407.0.2bde4f2+dfsg-6) unstable; urgency=medium
+
+  [ Peter Michael Green ]
+  * Move <pcap.h> include outside namespace.
+  * Clean up some stuff left behind by testsuite.
+  * Disable testsuite, it doesn't get run on the autobuilders anyway,
+    so it just acts as a trap for people building manually.
+
+ -- Sascha Steinbiss <satta@debian.org>  Fri, 01 Nov 2019 08:18:43 +0100
+
+pktanon (2~git20160407.0.2bde4f2+dfsg-5) unstable; urgency=medium
+
+  * Use debhelper 12.
+  * Fix FTBFS by renaming enum.
+  * Bump Standards-Version.
+
+ -- Sascha Steinbiss <satta@debian.org>  Mon, 22 Jul 2019 13:48:23 +0200
+
+pktanon (2~git20160407.0.2bde4f2+dfsg-4) unstable; urgency=medium
+
+  * Use debhelper 11.
+  * Use Salsa Vcs-* entries.
+  * Bump Standards-Version.
+
+ -- Sascha Steinbiss <satta@debian.org>  Wed, 01 Aug 2018 21:59:40 +0200
+
+pktanon (2~git20160407.0.2bde4f2+dfsg-3) unstable; urgency=medium
+
+  * Fix indentation in manpage.
+  * Add support for Xerces 3.2. Thanks to William Blough for the patch.
+    Closes: #881016
+  * Bump Standards-Version.
+
+ -- Sascha Steinbiss <satta@debian.org>  Tue, 07 Nov 2017 09:27:01 +0100
+
+pktanon (2~git20160407.0.2bde4f2+dfsg-2) unstable; urgency=medium
+
+  * Fix VCS-Git.
+  * Bump Standards-Version.
+  * Restrict archs to Linux-based ones. Thanks to Aaron Ucko for noticing.
+    Closes: #876210
+  * Remove obsolete B-D on dh-autoreconf/autotools-dev.
+  * Restrict tests because output is apparently not deterministic.
+
+ -- Sascha Steinbiss <satta@debian.org>  Wed, 20 Sep 2017 16:08:46 +0200
+
+pktanon (2~git20160407.0.2bde4f2+dfsg-1) unstable; urgency=low
+
+  * Initial release (Closes: #858464)
+
+ -- Sascha Steinbiss <satta@debian.org>  Tue, 09 May 2017 13:44:18 +0200
