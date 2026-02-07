@@ -1,0 +1,5 @@
+# Upstream provides no version information.
+pktanon source: debian-watch-file-is-missing
+
+# Binary pcap files are not suitable for line length checks.
+pktanon source: very-long-line-length-in-source-file * [*.pcap:*]

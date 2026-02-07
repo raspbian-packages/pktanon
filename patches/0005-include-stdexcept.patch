@@ -1,0 +1,16 @@
+Description: make sure that stdexcept is included
+ This fixes building with GCC 10, see #957688.
+Author: Sascha Steinbiss <satta@debian.org>
+Bug: https://github.com/KIT-Telematics/pktanon/issues/3
+Forwarded: https://github.com/KIT-Telematics/pktanon/pull/4
+Last-Update: 2020-04-22
+--- a/libpktanon/Params.h
++++ b/libpktanon/Params.h
+@@ -8,6 +8,7 @@
+ # ifndef PKTANON_PARAMS_H
+ # define PKTANON_PARAMS_H
+ 
++# include <stdexcept>
+ # include <string>
+ # include <unordered_map>
+ 
