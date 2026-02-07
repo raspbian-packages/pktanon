@@ -1,0 +1,29 @@
+Description: Move #include <pcap.h> outside namespace
+ Utils.h includes pcap.h from within the pktannon namespace, this causes system
+ structures to be incorrectly placed in the pktanon namespace breaking stuff
+ later. This patch moves the include outside of the namespace.
+Author: Peter Michael Green <plugwash@debian.org>
+
+--- pktanon-2~git20160407.0.2bde4f2+dfsg.orig/src/Utils.h
++++ pktanon-2~git20160407.0.2bde4f2+dfsg/src/Utils.h
+@@ -13,6 +13,11 @@
+ #include <PktAnon.h>
+ // #include <transformations/ErrorCodes.h>
+ 
++# ifdef HAVE_LIBPCAP
++
++# include <pcap.h>
++# endif
++
+ namespace pktanon
+ {
+ 
+@@ -35,8 +40,6 @@ inline void transform_packet ( PCAP_REC_
+ 
+ # ifdef HAVE_LIBPCAP
+ 
+-# include <pcap.h>
+-
+ inline void transform_packet ( struct pcap_pkthdr* pkt_header, const uint8_t* original_packet, uint8_t* transformed_packet, Stats& stats )
+ {
+   auto new_pkt_len = PktAnon::transform_packet ( original_packet, transformed_packet,  pkt_header->caplen );
