@@ -1,0 +1,14 @@
+---
+Bug-Database: https://github.com/KIT-Telematics/pktanon/issues
+Bug-Submit: https://github.com/KIT-Telematics/pktanon/issues/new
+Reference:
+  Author: Thomas Gamer and Christoph P. Mayer and Marcus Schoeller
+  Title: "PktAnon: A Generic Framework for Profile-based Traffic Anonymization"
+  Year: 2008
+  Journal: PIK Praxis der Informationsverarbeitung und Kommunikation (PIK)
+  Volume: 31
+  Number: 2
+  Pages: 76-81
+Repository: https://github.com/KIT-Telematics/pktanon.git
+Repository-Browse: https://github.com/KIT-Telematics/pktanon
+
